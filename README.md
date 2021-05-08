@@ -1,4 +1,4 @@
-# VBA Challenge
+# VBA Challenge: Refactoring Stock Analysis Script
 
 
 ## Overview of Project: Explain the purpose of this analysis.
@@ -22,13 +22,20 @@ Once this was accomplished, we could then dive into the data analysis produced b
 
 The original script for 2017 and 2018 ran quite slow:
 
+![Pre_Refactor_2017_Timer](https://user-images.githubusercontent.com/76575162/117553550-e9e88c00-b017-11eb-8d32-d633b6bd8b44.png)
+![Pre_Refactor_2018_Timer](https://user-images.githubusercontent.com/76575162/117553559-ec4ae600-b017-11eb-99a3-9c3eae7a5623.png)
 
 
 After refactoring, the script ran a lot faster and we obtained a much quicker execution time:
 
+![Post_Refactor_2017_Timer](https://user-images.githubusercontent.com/76575162/117553572-f836a800-b017-11eb-8f5b-3ae6dd6f09b7.png)
+![Post_Refactor_2018_Timer](https://user-images.githubusercontent.com/76575162/117553575-f967d500-b017-11eb-84af-1782574a9b87.png)
 
 
 While most of the original script was the same as the refactored script, the "For" loop going through the data is actually a little inefficient in the original script as it contains a nested "For" loop which causes a lot more operations than needed. Here is a comparison between the two loops:
+
+![Pre_Refactor_Loop_Code](https://user-images.githubusercontent.com/76575162/117553601-2ae0a080-b018-11eb-8e69-f7bcfa0ebdf6.png)
+![Post_Refactor_Loop_Code](https://user-images.githubusercontent.com/76575162/117553610-33d17200-b018-11eb-9f05-50494c0aca11.png)
 
 The biggest difference between the two is that by using a new variable as an index for tickers called "tickerIndex", we were able to get rid of the nested "For" loop and greatly reduce the amount of operations initiated by the script. Going from a 0.50s run time to 0.067 means that our changes made the script run almost 10 times quicker. This would mean that the time savings would be considerable when using this script with much larger data sets.
 
@@ -40,6 +47,8 @@ Lastly, it is also important to note that to help visualize the analysis results
 
 As shown in the images below, 2018 was not nearly as good a year as 2017 for the stocks included in our data set:
 
+![Stock_Performance_2017_Table](https://user-images.githubusercontent.com/76575162/117553623-4186f780-b018-11eb-9682-7994cc7589bd.png)
+![Stock_Performance_2018_Table](https://user-images.githubusercontent.com/76575162/117553624-4350bb00-b018-11eb-8765-506a35a8e88a.png)
 
 
 Among all the tickers tracked, only ENPH and RUN showed continued growth and did so by quite a large margin; both stocks rose over 80% year over year and saw their total daily volume explode (close to 3X for ENPH and 2X for RUN) while most other stocks were close to the same or regressed. The only exception is DQ, which after a great 2017 and relatively low trading volumes lost 62.6% in 2018 with close to triple the closing volume
@@ -60,7 +69,7 @@ On long-term projects, refactoring is an essential tool for software maintenance
 
 Refactoring the code could result in software malfunction or cause confusion for other programmers, highlighting the importance of tracking modifications and having enough comments to help others navigate the code. 
 
-(used https://stackoverflow.com/questions/43983284/what-are-the-advantages-and-disadvantages-of-refactoring-code-smell-in-software as a source for complementary info)
+(used [this page](https://stackoverflow.com/questions/43983284/what-are-the-advantages-and-disadvantages-of-refactoring-code-smell-in-software) as a source for complementary info)
 
 
 ### How do these pros and cons apply to refactoring the original VBA script?
