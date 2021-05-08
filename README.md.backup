@@ -60,8 +60,6 @@ On long-term projects, refactoring is an essential tool for software maintenance
 
 Refactoring the code could result in software malfunction or cause confusion for other programmers, highlighting the importance of tracking modifications and having enough comments to help others navigate the code. 
 
-(used https://stackoverflow.com/questions/43983284/what-are-the-advantages-and-disadvantages-of-refactoring-code-smell-in-software as a source for complementary info)
-
 
 ### How do these pros and cons apply to refactoring the original VBA script?
 
