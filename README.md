@@ -1,4 +1,4 @@
-# VBA Challenge: Refactoring Stock Analysis Script
+# VBA Experimentation: Refactoring Stock Analysis Script
 
 
 ## Overview of Project: Explain the purpose of this analysis.
